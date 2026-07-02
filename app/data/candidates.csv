@@ -1,6 +1,6 @@
-Name,Skills,Experience,Education,Score
-Rahul,"Python, Machine Learning, SQL",2,B.Tech,0
-Priya,"Java, Spring Boot, MySQL",3,B.Tech,0
-Arjun,"Python, NLP, TensorFlow",1,B.Tech,0
-Sneha,"JavaScript, React, Node.js",2,B.Tech,0
-Kiran,"Python, Data Science, Pandas",4,M.Tech,0
+Name,Skills,Experience,Education,Resume
+Rahul,"Python, Machine Learning, SQL",2,B.Tech,"Experienced Python developer with Machine Learning, SQL, Flask and AI projects."
+Priya,"Java, Spring Boot, MySQL",3,B.Tech,"Backend Java developer with Spring Boot, REST APIs and MySQL."
+Arjun,"Python, NLP, TensorFlow",1,B.Tech,"Python developer specializing in NLP, TensorFlow and Deep Learning."
+Sneha,"JavaScript, React, Node.js",2,B.Tech,"Full Stack Developer skilled in React, Node.js and MongoDB."
+Kiran,"Python, Data Science, Pandas",4,M.Tech,"Senior Data Scientist experienced in Python, Pandas, Machine Learning and Analytics."
