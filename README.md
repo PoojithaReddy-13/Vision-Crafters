@@ -2,66 +2,120 @@
 # Vision-Crafters
 ## AI-Powered Intelligent Candidate Ranking System
 
-Vision-Crafters is an AI-powered hiring assistant designed to simplify candidate screening by analyzing resumes against job descriptions and ranking applicants based on their relevance to a job role.
+Vision-Crafters is a Python-based candidate ranking system designed to help recruiters shortlist candidates based on job-related skills and requirements.
 
-The project aims to make recruitment more efficient by combining resume parsing, semantic analysis, and intelligent scoring to help recruiters identify suitable candidates.
+The application allows recruiters to enter a job description, evaluates sample candidate profiles using keyword-based scoring, and displays ranked candidates through a simple interactive dashboard.
 
 ## 🚀 Features
 
-- **Resume Parsing:** Extract relevant information from candidate resumes.
-- **Job Description Analysis:** Identify important skills, qualifications, and requirements from job descriptions.
-- **Candidate Ranking:** Rank applicants based on their suitability for a particular role.
-- **AI-Based Matching:** Analyze the relevance between candidate profiles and job requirements.
-- **Intelligent Scoring:** Use a scoring mechanism to compare candidates against defined hiring criteria.
-- **Recruiter-Friendly Dashboard:** Present candidate matching and ranking results in an accessible format.
+- **Job Description Input:** Enter job requirements through a text area.
+- **Candidate Data Processing:** Load candidate information from a CSV file using Pandas.
+- **Keyword-Based Matching:** Check job descriptions for keywords such as Python and Java.
+- **Candidate Scoring:** Assign scores based on matching programming skills.
+- **Candidate Ranking:** Sort candidates by their calculated scores.
+- **Interactive Dashboard:** Display candidate details and ranking results using Streamlit.
+- **Top Candidate Identification:** Highlight the highest-ranked candidate.
+- **Candidate Statistics:** Display the total number of candidates and the highest score.
+- **Data Visualization:** Show candidate scores using a bar chart.
+- **CSV Export:** Save ranked candidate data to a CSV file.
 
 ## ⚙️ How It Works
 
-1. **Input Job Description:** Provide the job description containing the role requirements.
-2. **Upload Candidate Resumes:** Supply resumes for evaluation.
-3. **Analyze Profiles:** Extract relevant candidate information and identify matching skills and qualifications.
-4. **Calculate Scores:** Evaluate candidates against the job requirements using the system's matching and scoring logic.
-5. **Rank Candidates:** Organize candidates according to their calculated relevance scores.
-6. **Review Results:** Help recruiters compare candidate profiles and make informed screening decisions.
+1. The recruiter enters a job description.
+2. The application loads candidate profiles from `candidates.csv`.
+3. The system checks for supported keywords, including Python and Java.
+4. Candidates receive scores based on the matching keyword.
+5. Candidate records are sorted by score in descending order.
+6. The dashboard displays the rankings, top candidate, statistics, and score chart.
+
+## 🧮 Scoring Logic
+
+The current Streamlit application uses simple keyword-based scoring:
+
+- **100 points:** Candidates whose skills contain the detected Python or Java keyword.
+- **70 points:** Other candidates when Python or Java is detected in the job description.
+- **80 points:** All candidates when neither supported keyword is detected.
+
+This is a basic rule-based scoring approach and can be extended with more advanced matching techniques.
 
 ## 🛠️ Technologies Used
 
-- **Programming Language:** Python
-- **Data Processing:** Pandas
-- **AI Techniques:** Semantic analysis and intelligent candidate matching
-- **Version Control:** Git and GitHub
+- **Python** – Application logic and candidate scoring.
+- **Pandas** – Candidate data processing and CSV operations.
+- **Streamlit** – Interactive web dashboard.
+- **CSV** – Candidate data storage and ranked results.
+- **Git and GitHub** – Version control and project hosting.
 
-*Update this section to include the exact libraries, frameworks, and tools used in your implementation.*
+## 📁 Project Structure
+
+```text
+Vision-Crafters/
+├── app/
+│   ├── data/
+│   │   ├── candidates.csv
+│   │   └── ranked_candidates.csv
+│   ├── page.py
+│   ├── rank_candidates.py
+│   └── ui/
+│       └── home.py
+├── real_ranker.py
+├── submission.csv
+├── validate_submission.py
+└── README.md
+```
+
+## ▶️ How to Run
+
+### 1. Clone the repository
+
+```bash
+git clone <your-github-repository-url>
+cd Vision-Crafters
+```
+
+### 2. Install the required libraries
+
+```bash
+pip install pandas streamlit
+```
+
+### 3. Launch the Streamlit dashboard
+
+From the project root directory, run:
+
+```bash
+streamlit run app/ui/home.py
+```
+
+### 4. Use the application
+
+Open the local URL displayed in the terminal, enter a job description, and click **Show Ranked Candidates** to view the results.
 
 ## 🎯 Project Objectives
 
-- Reduce manual effort in initial resume screening.
-- Improve the organization of candidate evaluation.
-- Match candidate qualifications with job-specific requirements.
-- Provide understandable candidate rankings to support recruiter decisions.
-- Explore practical applications of AI in recruitment.
+- Simplify initial candidate screening.
+- Organize candidate profiles according to job requirements.
+- Reduce manual effort in comparing candidate skills.
+- Present ranking results through an interactive dashboard.
+- Explore practical applications of automation in recruitment.
 
-## 💡 What Makes This Project Useful?
+## 🔮 Future Improvements
 
-Traditional resume screening can require recruiters to manually compare many candidate profiles. Vision-Crafters aims to streamline this process by organizing candidate information, evaluating job relevance, and generating ranked results.
+- Implement actual resume parsing from PDF and DOCX files.
+- Use semantic similarity or embedding-based matching.
+- Evaluate multiple skills, experience, and education criteria.
+- Generate explanations for individual candidate scores.
+- Add downloadable CSV and Excel reports.
+- Evaluate ranking accuracy using a larger, diverse dataset.
+- Improve ranking fairness and candidate evaluation transparency.
 
-The system is intended to support recruiters, not replace human judgment. Final hiring decisions should consider additional context and human evaluation.
+## ⚠️ Limitations
 
-## 🔮 Future Enhancements
-
-- Support additional resume formats.
-- Improve semantic matching using embedding-based models.
-- Add filters for skills, experience, and qualifications.
-- Provide detailed explanations for individual candidate scores.
-- Add candidate comparison and downloadable reports.
-- Evaluate ranking quality using diverse test cases.
+The current dashboard uses sample candidate data and basic keyword-based rules. It does not yet implement full resume uploading, semantic analysis, or a trained machine learning model in the Streamlit workflow. Rankings should be treated as preliminary screening results rather than final hiring decisions.
 
 ## 👩‍💻 Project Information
 
-**Project Name:** Vision-Crafters  
-**Category:** Artificial Intelligence / Recruitment Technology  
-**Project Type:** AI-Powered Hiring Assistant
-
----
-
-**Disclaimer:** Candidate rankings are decision-support outputs and should not be treated as the sole basis for hiring decisions.
+- **Project Name:** Vision-Crafters
+- **Project Type:** Candidate Ranking and Recruitment Support
+- **Primary Language:** Python
+- **Main Framework:** Streamlit
